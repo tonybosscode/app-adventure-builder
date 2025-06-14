@@ -1,4 +1,3 @@
-
 import React, { createContext, useContext, useState, useEffect } from 'react';
 
 interface LanguageContextType {
@@ -10,7 +9,7 @@ interface LanguageContextType {
 const translations = {
   en: {
     // Navigation
-    'app.title': 'Relationship Hub',
+    'app.title': 'Story Daily',
     'nav.home': 'Home',
     'nav.categories': 'Categories',
     'nav.profile': 'Profile',
@@ -36,12 +35,12 @@ const translations = {
     'language.continue': 'Continue',
     
     // Onboarding
-    'onboarding.welcome': 'Welcome to Relationship Hub',
+    'onboarding.welcome': 'Welcome to Story Daily',
     'onboarding.description': 'Discover amazing content about love, relationships, and life',
   },
   sw: {
     // Navigation
-    'app.title': 'Kituo cha Mahusiano',
+    'app.title': 'Story Daily',
     'nav.home': 'Nyumbani',
     'nav.categories': 'Makundi',
     'nav.profile': 'Wasifu',
@@ -67,7 +66,7 @@ const translations = {
     'language.continue': 'Endelea',
     
     // Onboarding
-    'onboarding.welcome': 'Karibu Kituo cha Mahusiano',
+    'onboarding.welcome': 'Karibu Story Daily',
     'onboarding.description': 'Gundua maudhui ya ajabu kuhusu mapenzi, mahusiano, na maisha',
   }
 };
