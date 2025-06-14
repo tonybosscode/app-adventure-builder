@@ -1,4 +1,3 @@
-
 import { CapacitorSQLite, SQLiteConnection, SQLiteDBConnection } from '@capacitor-community/sqlite';
 import { Capacitor } from '@capacitor/core';
 
@@ -224,7 +223,7 @@ class SQLiteService {
       localStorage.setItem('storyDaily_posts', JSON.stringify(samplePosts));
     } else {
       for (const post of samplePosts) {
-        await this.db!.execute(
+        await this.db!.run(
           'INSERT INTO posts (title, content, category, language, isPremium, likes) VALUES (?, ?, ?, ?, ?, ?)',
           [post.title, post.content, post.category, post.language, post.isPremium ? 1 : 0, post.likes]
         );
@@ -283,12 +282,12 @@ class SQLiteService {
       if (!this.db) throw new Error('Database not initialized');
 
       try {
-        await this.db.execute(
+        await this.db.run(
           'INSERT OR IGNORE INTO user_likes (userId, postId) VALUES (?, ?)',
           [userId, postId]
         );
 
-        await this.db.execute(
+        await this.db.run(
           'UPDATE posts SET likes = likes + 1 WHERE id = ?',
           [postId]
         );
@@ -314,7 +313,7 @@ class SQLiteService {
     } else {
       if (!this.db) throw new Error('Database not initialized');
 
-      const result = await this.db.execute(
+      const result = await this.db.run(
         'INSERT INTO users (username, email, preferredLanguage) VALUES (?, ?, ?)',
         [username, email, preferredLanguage]
       );
@@ -346,7 +345,7 @@ class SQLiteService {
     } else {
       if (!this.db) throw new Error('Database not initialized');
 
-      await this.db.execute(
+      await this.db.run(
         'UPDATE users SET preferredLanguage = ? WHERE id = ?',
         [language, userId]
       );

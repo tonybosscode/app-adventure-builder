@@ -2,8 +2,8 @@
 import { CapacitorConfig } from '@capacitor/cli';
 
 const config: CapacitorConfig = {
-  appId: 'app.lovable.1c858d5084d34d49bbc8c0c89b703858',
-  appName: 'A Lovable project',
+  appId: 'com.example.storydaily',
+  appName: 'Story Daily',
   webDir: 'dist',
   server: {
     url: 'https://1c858d50-84d3-4d49-bbc8-c0c89b703858.lovableproject.com?forceHideBadge=true',
